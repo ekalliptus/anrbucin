@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+---
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5" />
+  <meta name="theme-color" content="#0d0d1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+  <title>Untuk Kamu 💕</title>
+</head>
+<body>
+  <!-- Background Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Custom Name Modal -->
+  <div class="modal-overlay visible" id="modal-overlay">
+    <div class="modal">
+      <div class="modal-emoji">🤗</div>
+      <h2>Hai, siapa kamu?</h2>
+      <input type="text" id="nama-input" placeholder="Ketik nama kamu..." maxlength="10" autocomplete="off" />
+      <p class="modal-error" id="modal-error"></p>
+      <button class="modal-btn" id="modal-btn">Lanjut 💫</button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Main App -->
+  <div id="app">
+    <!-- Typing intro -->
+    <p id="idgeser"></p>
+
+    <!-- Glass Card -->
+    <div class="card" id="card">
+      <span class="card-emoji" id="card-emoji">🤗</span>
+      <p class="card-text" id="katakata"></p>
+      <p class="card-subtext" id="katabawah"></p>
+      <button class="wa-btn" id="wa-btn" onclick="menuju()">💬 Kirim WhatsApp</button>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group" id="btn-group">
+      <span class="tease-text" id="tease-text"></span>
+      <button class="btn-yes" id="btn-yes" onclick="terima()">Sayang 💖</button>
+      <button class="btn-no" id="btn-no" onclick="tolak()">Ga</button>
+    </div>
+  </div>
+
+  <script src="../scripts/main.js"></script>
+  <script is:inline>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>
